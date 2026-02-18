@@ -21,7 +21,7 @@ function showSidebar() {
 
 export function errorOccur() {
      return (
-          <div style={{width: "100vw", height: "60vh", alignContent: "center", textAlign: "center"}}>
+          <div style={{width: "100%", height: "60%", alignContent: "center", textAlign: "center"}}>
                <h1 style={{fontFamily: "Trirong, serial", fontSize: "10vh", margin: "0%"}}>Sorry!</h1>
                <h2 style={{fontFamily: "Trirong, serial", color: "rgb(192, 192, 192)"}}>An error occurred, please try refreshing!...</h2>
           </div>

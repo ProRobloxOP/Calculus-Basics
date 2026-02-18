@@ -19,7 +19,7 @@ function definitions(): JSX.Element {
                     <h1 className="title">Derivative: Limit Definition</h1>
                     <div className="section" style={{display:"flex", alignItems: "center"}}>
                          <div style={{marginRight:"3%", marginLeft: "3%"}}>
-                              <img src={avRateOfChangePng}></img>
+                              <img src={avRateOfChangePng} style={{width: "100%", height: "auto"}}></img>
                               <p style={{margin: "0%"}}>Source: cuemath.com</p>
                          </div>
                          <div>
@@ -39,7 +39,7 @@ function definitions(): JSX.Element {
                          <MathJax className="p1">{
                               "Which graphically forms a tangent line around \\(x_0\\), as the second point (\\(x_1\\)) in the secant line approaches \\(x_0\\)."
                          }</MathJax>
-                         <img src={secantToTangentPng}></img>
+                         <img src={secantToTangentPng} style={{width: "30%", height: "auto"}}></img>
                          <p>Source: dibgerge.com</p>
                     </div>
 
