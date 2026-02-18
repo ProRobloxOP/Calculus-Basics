@@ -1,0 +1,16 @@
+#home {
+     display: flex;
+     width: 100vw;
+     height: 60vh;
+     left:0;
+     top:0;
+     align-items: center;
+     justify-content: center;
+}
+
+#home h1 {
+     font-family: 'Great Vibes', cursive;
+     font-weight: normal;
+     font-style: normal;
+     font-size: 3vw;
+}

@@ -1,0 +1,97 @@
+html, body {
+     overscroll-behavior: none;
+     margin: 0;
+     height: 100%;
+}
+
+@keyframes headerIn {
+     from {height: 0vh; opacity: 0%;}
+     to {height: 40vh; opacity: 100%;}
+}
+
+#header {
+     user-select: none;
+     z-index: 0;
+
+     padding: 0;
+     left: 0;
+     top: 0;
+     width: 100vw;
+     height: 40vh;
+     position: relative;
+}
+
+.headerIn {
+     animation-name: "headerIn";
+     animation-duration: 0.8s;
+}
+
+#header #background {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+
+     image-rendering: auto;
+     object-fit: cover;
+
+     z-index: 0;
+}
+
+#header #title {
+     position: absolute;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+     left: 0;
+     top: 30%;
+     width: 100%;
+     height: 70%;
+
+     font-family: 'Trirong', serif;
+     font-size: 10vh;
+     letter-spacing: 0.05vw;
+     z-index: 1;
+
+     color: black;
+     -webkit-text-stroke: 0.05vw white;
+}
+
+#header #topbar {
+     position: absolute;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 30%;
+}
+
+#header #topbar #menuButton {
+     position: absolute;
+     left: 2.5%;
+     top: 12%;
+
+     cursor: pointer;
+     background:none;
+     border: none;
+
+     justify-content: center;
+     align-items: center;
+
+     width: 4%;
+     height: auto;
+}
+
+#header #topbar #menuIcon {
+     position: absolute;
+     top: 0%;
+     left: 0%;
+
+     width: 100%;
+     height: auto;
+     max-width: 100%;
+     image-rendering: auto;
+     object-fit: contain;
+     filter: grayscale(1) brightness(0);
+}
+
+
