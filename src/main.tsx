@@ -5,14 +5,15 @@ import {
 
 import {
   createRoutesFromElements,
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
+  HashRouter,
   Route,
   redirect
 } from "react-router-dom";
 
 import Root, {
-  errorOccur
+  errorOccur,
 } from './routes/root'
 
 import Home, {
@@ -24,7 +25,7 @@ import TopicHandler, {
   topicInProgress
 } from "./routes/topicHandler"
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <Route
       path="/"
@@ -32,11 +33,12 @@ const router = createBrowserRouter(
       errorElement={errorOccur()}
     >
       <Route index element={<Home />} />
-      <Route path="/topic-in-progress" element={topicInProgress()}></Route>
+      <Route path ="Calculus-Basics" element={<Home/>} />
       <Route path="*" loader={() => {
-        return redirect(`/`);
+          return redirect(`/`);
       }}/>
 
+      <Route path="topic-in-progress" element={topicInProgress()}></Route>
       <Route path=':topic/:subtopic' element={<TopicHandler />} loader={topicLoader} />
     </Route>
   )
@@ -44,6 +46,6 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
-    <RouterProvider router={ router }></RouterProvider>
+    <RouterProvider router={router} />
   </StrictMode>,
 )

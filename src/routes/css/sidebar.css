@@ -1,11 +1,21 @@
 @keyframes sidebarIn {
-     from {width: 0%; opacity: 0%;}
-     to {width: 100%; opacity: 100%;}
+     0% {
+          transform: translateX(-100%);
+     }
+
+     100% {
+          transform: translateX(0%);
+     }
 }
 
 @keyframes sidebarOut {
-     from {width: 100%; opacity: 100%;}
-     to {width: 0%; opacity: 0%;}
+      0% {
+          transform: translateX(0%);
+     }
+
+     100% {
+          transform: translateX(-100%);
+     }
 }
 
 #sidebar {
@@ -32,7 +42,7 @@
      position: absolute;
      top: 0%;
      left: 20%;
-     width: 80%;
+     width: clamp(50px, 80%, 2000px);
      height: 100%;
 
      background-color: white;
@@ -43,7 +53,7 @@
      position: absolute;
      top: 0%;
      left: 0%;
-     width: 20%;
+     width: clamp(250px, 20%, 1000px);
      height: 100%;
 
      background-color: rgb(211, 211, 211);

@@ -1,18 +1,27 @@
-
+.\.img_lightborder {
+     border: 0.25vw solid lightgrey;
+}
 
 #differentiation {
-     display:flex;
+     display:block;
      align-items: center;
-     justify-content: center;
-     width: 100%;
+     width: 100vw;
      height: auto;
 
      text-align: center;
 }
 
+
 #differentiation .title {
      font-family: 'Trirong', serif;
      font-size: 2vw;
+}
+
+#differentiation .caption {
+     font-family: 'Trirong', serif;
+     font-size: min(1vw, 3vh);
+     margin: 0%;
+     margin-bottom: 1.5%;
 }
 
 #differentiation .p0 {
@@ -25,6 +34,13 @@
 #differentiation .p1 {
      font-family: 'Trirong', serif;
      font-size: 1.5vw;
+     margin: 0%;
+     margin-bottom: 1.5%;
+}
+
+#differentiation .p2 {
+     font-family: 'Trirong', serif;
+     font-size: 1.7vw;
      margin: 0%;
      margin-bottom: 1.5%;
 }
