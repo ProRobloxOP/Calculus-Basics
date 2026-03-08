@@ -1,7 +1,5 @@
 import {
      Outlet,
-     redirect,
-     useRouteError,
 } from "react-router-dom"
 import "../index.d.ts"
 

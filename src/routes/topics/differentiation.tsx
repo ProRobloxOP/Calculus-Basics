@@ -1,5 +1,6 @@
 import {
-     JSX
+     JSX,
+     useState
 } from "react"
 
 import {
@@ -18,6 +19,9 @@ import cubic_root_x_derivativePng from "../../assets/images/topics/differentiati
 import "../../index.d.ts"
 
 import "../css/topics/differentiation.css"
+import { 
+     ArrowExpander
+} from "../../tools/ui/arrowExpander.tsx"
 
 function definitions(): JSX.Element {
      return (
@@ -72,8 +76,11 @@ function definitions(): JSX.Element {
 }
 
 function rules(): JSX.Element {
+     const [graphsHiddden, setGraphsHidden] = useState(true);
+
      return (
           <div id="differentiation">
+               {/* Minor Rule: Differentiability */}
                <h1 className="title">Derivative: Differentiability</h1>
                <div className="section">
                     <MathJax className="p1">{"All functions are not differentiable throughout; a function at a \\(x\\)-coordinate (\\(a\\)) has a derivative if:"}</MathJax>
@@ -91,10 +98,21 @@ function rules(): JSX.Element {
                     </ol>
 
                     <div style={{display: "flex", alignItems: "center", textAlign: "center"}}>
-                         <p className="title" style={{left: "25%", display: "flex"}}> ▲ </p>
-                         <h1 className="title" style={{width: "100%"}}>Graphical Illustration</h1>
+                         <div className="title" style={{left: "36%", position: "absolute"}}> 
+                              <ArrowExpander 
+                                   activeType="up" 
+                                   inactiveType="down"
+                                   activeCallback={() => {
+                                        setGraphsHidden(false);
+                                   }}
+                                   inactiveCallback={() => {
+                                        setGraphsHidden(true);
+                                   }}
+                              /> 
+                         </div>
+                         <h1 className="title" style={{width: "100%"}}>Graphical Illustrations</h1>
                     </div>
-                    <div className="p2 section">
+                    <div className="p2 section" hidden={graphsHiddden}>
                          <div>
                               <MathJax style={{margin: "3%"}}>{
                                    "1) \\(f(x)=\\begin{cases}" +
@@ -122,7 +140,11 @@ function rules(): JSX.Element {
                     </div>
                </div>
 
+               {/* 1st Rule: Chain Rule */}
                <h1 className="title">Derivative: Chain Rule</h1>
+               <div className="section">
+                    
+               </div>
           </div>
      )
 }

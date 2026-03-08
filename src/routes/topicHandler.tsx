@@ -1,5 +1,5 @@
-import {
-     JSX
+import React, {
+     JSX,
 } from "react"
 
 import {
@@ -41,12 +41,12 @@ export function topicInProgress() {
      )
 }
 
-export default function TopicHandler() {
+export default function TopicHandler(): JSX.Element {
      const lessonMap: {["topic"]: string, ["subtopic"]: string} = useLoaderData();
      const topicCreator: () => Map<string, () => JSX.Element> = topicModules.get(lessonMap.topic) as () => Map<string, () => JSX.Element>;
      const lessonElement: () => JSX.Element = topicCreator().get(lessonMap.subtopic) as () => JSX.Element;
 
-     const header = document.getElementById("header");
+     const header = React.useMemo(() => document.getElementById("header"), []);
      if (header != null){ header.className="headerIn"; }
 
      return (
