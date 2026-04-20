@@ -5,6 +5,11 @@ import {
 import {
      getCourses,
 } from "../infos/courses"
+
+import {
+     getLinkName
+} from "./topicHandler"
+
 import type {
      calculusLevel,
      topic,
@@ -25,13 +30,15 @@ function hideSidebar() {
           const sidebar: HTMLElement = document.getElementById("sidebar") as HTMLElement;
           sidebar.hidden = true;
           sidebar.className = "";
-          document.body.style.overflowY = "auto";
+          document.documentElement.style.overflow = "auto";
      }, 750);
 }
 
 function exitMenu() {
      const sidebar: HTMLElement = document.getElementById("sidebar") as HTMLElement;
      const sidebarNav: HTMLElement = document.getElementById("sidebarNav") as HTMLElement;
+     const header = document.getElementById("header");
+     if (header != null ){ header.className = "headerIn"; }
      
      sidebarNav.hidden = true;
      sidebar.className = "slideOut";
@@ -44,13 +51,13 @@ function createTopicDiv(topic: topic) {
                <div>
                     {topic.subtopics.map((subtopic: subtopic) => (
                          <Link 
-                              key={subtopic.name+"-link"}
-                              to={topic.name.toLowerCase()+"/"+subtopic.name.toLowerCase()}
+                              key={getLinkName(subtopic.name)+"-link"}
+                              to={getLinkName(topic.name)+"/"+getLinkName(subtopic.name)}
                               style={{color:"inherit", textDecoration:"none"}}
                               onClick={exitMenu}
                          >
                               <h3
-                                   key={subtopic.name} 
+                                   key={getLinkName(subtopic.name)} 
                                    className="subtopic"
                               >
                                    {subtopic.name}

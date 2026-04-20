@@ -23,8 +23,8 @@ html, body {
      left: 0;
      top: 0;
      width: 100%;
-     height: 40%;
-     position: relative;
+     height: max(28vw, 30vh);
+     position: absolute;
 }
 
 .headerIn {

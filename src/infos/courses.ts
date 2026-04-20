@@ -21,6 +21,8 @@ const courses : calculusLevel[] = [
                     ["subtopics"] : [
                          {["name"] : "Definitions"},
                          {["name"] : "Rules"},
+                         {["name"] : "Non-Polynomials"},
+                         {["name"] : "Proofs"},
                          {["name"] : "Applications"},
                     ],
                },
@@ -28,8 +30,9 @@ const courses : calculusLevel[] = [
                     ["name"] : "Integration",
                     ["subtopics"] : [
                          {["name"] : "Definitions"},
-                         {["name"] : "Proofs"},
                          {["name"] : "Rules"},
+                         {["name"] : "Non-Polynomials"},
+                         {["name"] : "Proofs"},
                          {["name"] : "Applications"},
                     ],
                }

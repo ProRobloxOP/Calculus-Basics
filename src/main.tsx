@@ -9,7 +9,8 @@ import {
   RouterProvider,
   HashRouter,
   Route,
-  redirect
+  redirect,
+  useLocation
 } from "react-router-dom";
 
 import Root, {
@@ -39,7 +40,7 @@ const router = createHashRouter(
       }}/>
 
       <Route path="topic-in-progress" element={topicInProgress()}></Route>
-      <Route path=':topic/:subtopic' element={<TopicHandler />} loader={topicLoader} />
+      <Route path=':topic/:subtopic' element={<TopicHandler />} loader={topicLoader}/>
     </Route>
   )
 )

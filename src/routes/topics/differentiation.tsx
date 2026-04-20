@@ -140,18 +140,68 @@ function rules(): JSX.Element {
                     </div>
                </div>
 
-               {/* 1st Rule: Chain Rule */}
+               {/* 1st Rule: Power Rule */}
+               <h1 className="title">Derivative: Power Rule</h1>
+               <div className="section p1">
+                    <MathJax>{"Let \\(f(x) = ax^n\\) i.e. a polynomial function including \\(n \\leq 0\\). Then,"}</MathJax>
+                    <MathJax>{"\\(f'(x) = a(n-1)x^{n-1}\\)"}</MathJax>
+               </div>
+
+               {/* 2nd Rule: Chain Rule */}
                <h1 className="title">Derivative: Chain Rule</h1>
-               <div className="section">
-                    
+               <div className="section p1">
+                    <MathJax>{"Let \\(h(x) = g(f(x))\\), which \\(f(x)\\) and \\(g(x)\\) are differentiable. Then,"}</MathJax>
+                    <MathJax>{"\\(h'(x) = f'(x) \\cdot g'(f(x))\\)"}</MathJax>
+               </div>
+
+               {/* 3rd Rule: Product Rule */}
+               <h1 className="title">Derivative: Product Rule</h1>
+               <div className="section p1">
+                    <MathJax>{"Let \\(h(x) = f(x) \\cdot g(x)\\), which \\(f(x)\\) and \\(g(x)\\) are differentiable. Then,"}</MathJax>
+                    <MathJax>{"\\(h'(x) = f'(x) \\cdot g(x) + g'(x) \\cdot f(x)\\) "}</MathJax>
+               </div>
+
+               {/* 4th Rule: Quotient Rule */}
+               <h1 className="title">Derivative: Quotient Rule</h1>
+               <div className="section p1">
+                    <MathJax>{"Let \\(h(x) = \\frac{f(x)}{g(x)}\\), which \\(f(x)\\) and \\(g(x)\\) are differentiable. Then,"}</MathJax>
+                    <MathJax>{"\\(h'(x) = \\frac{f'(x) \\cdot g(x) - g'(x) \\cdot f(x)}{(g(x))^2}\\)"}</MathJax>
+               </div>
+
+               {/* 5th Rule: L'Hôpital's Rule */}
+               <h1 className="title">Derivative: L'Hôpital's Rule</h1>
+               <div className="section p1">
+                    <MathJax>{"Let \\(h(c) = \\lim_{x \\to c} \\frac{f(x)}{g(x)}\\) for which \\(h(c)\\) results in an indeterminate form (eg. \\(\\frac{0}{0}\\) or \\(\\pm \\frac{\\infty}{\\infty})\\). Then,"}</MathJax>
+                    <MathJax>{"\\(h(c) = \\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)}\\)"}</MathJax>
+                    <MathJax>{"Where \\(h(c)\\) results in a determinate form. Note: Do not use quotient rule!"}</MathJax>
                </div>
           </div>
      )
+}
+
+function non_polynomials(): JSX.Element {
+     return (
+          <div id = "differentiation">
+               <h1 className="p0"><MathJax>{"*Note: All input (\\(x\\)) can be replaced with a function and must be chain ruled!"}</MathJax></h1>
+               <h1 className="title">Derivative: Trignometric Functions</h1>
+               <div className="section p3">
+                    <MathJax>{"\\(\\frac{d}{dx} sin(x) = cos(x)\\)"}</MathJax>
+                    <MathJax>{"\\(\\frac{d}{dx} cos(x) = -sin(x)\\)"}</MathJax>
+                    <MathJax>{"\\(\\frac{d}{dx} tax(x) = \\frac{1}{cos^2(x)}\\)"}</MathJax>
+               </div>
+
+               <h1 className="title">Derivative: Exponential Functions</h1>
+               <div className="section p3">
+                    <MathJax>{"\\(\\frac{d}{dx} a^x = a^xln(a)\\)"}</MathJax>
+               </div>
+          </div>
+     );
 }
 
 export default function Differentiation(): Map<string, () => JSX.Element> {
      return new Map<string, () => JSX.Element>([
           ["definitions", definitions],
           ["rules", rules],
+          ["non-polynomials", non_polynomials]
      ])
 }

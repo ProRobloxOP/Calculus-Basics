@@ -13,9 +13,13 @@ import {
 
 import Differentiation from "./topics/differentiation";
 
-const topicModules: Map<string, () => Map<string, () => JSX.Element>> = new Map<string, () => Map<string, () => JSX.Element>>([
+export const topicModules: Map<string, () => Map<string, () => JSX.Element>> = new Map<string, () => Map<string, () => JSX.Element>>([
      ["differentiation", Differentiation],
 ]);
+
+export function getLinkName(str : string) {
+     return str.replaceAll(" ", "-").toLowerCase();
+}
 
 export async function loader({ params }: any) {
      const topic: string = params.topic;
@@ -24,7 +28,7 @@ export async function loader({ params }: any) {
      
      if (topicCreator == null || topicCreator().get(subtopic) == null){ 
           throw redirect("/topic-in-progress");
-      }
+     }
 
      return {
           ["topic"]: topic,
@@ -45,9 +49,6 @@ export default function TopicHandler(): JSX.Element {
      const lessonMap: {["topic"]: string, ["subtopic"]: string} = useLoaderData();
      const topicCreator: () => Map<string, () => JSX.Element> = topicModules.get(lessonMap.topic) as () => Map<string, () => JSX.Element>;
      const lessonElement: () => JSX.Element = topicCreator().get(lessonMap.subtopic) as () => JSX.Element;
-
-     const header = React.useMemo(() => document.getElementById("header"), []);
-     if (header != null){ header.className="headerIn"; }
 
      return (
           <MathJaxContext>

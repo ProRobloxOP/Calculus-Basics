@@ -1,5 +1,8 @@
 import {
      Outlet,
+     Location,
+     useLocation,
+     useLoaderData,
 } from "react-router-dom"
 import "../index.d.ts"
 
@@ -8,12 +11,14 @@ import menuIcon from "../assets/images/root/menu.svg"
 
 import "./css/root.css"
 import Sidebar from "./sidebar"
+import React from "react"
+
+import {topicModules} from "./topicHandler.tsx"
 
 function showSidebar() {
      const sidebar: HTMLElement = document.getElementById("sidebar") as HTMLElement;
-     const sidebarNav: HTMLElement = document.getElementById("sidebarNav") as HTMLElement;
 
-     document.body.style.overflowY = "hidden";
+     document.documentElement.style.overflow = "hidden";
 
      sidebar.hidden = false;
      sidebar.className = "slideIn";
@@ -30,31 +35,31 @@ export function errorOccur() {
 
 export default function Root() {
      return (
-          <>
-               <div 
-                    id="header" className="headerIn"
-                    onAnimationEnd={() => {
-                         const header: HTMLElement = document.getElementById("header") as HTMLElement;
-                         header.className="";
-                    }}
-               >
-                    <img src={ headerWallpaper } id="background" />
-                    <div id="title" >Calculus Basics</div>
-                    <div id="topbar">
-                         <button 
-                              id="menuButton"
-                              type="button"
-                              onClick={ showSidebar }
-                         >
-                              <img src={ menuIcon } id="menuIcon"/>
-                         </button>
-                    </div>
+         <>
+          <div 
+               id="header" className="headerIn"
+               onAnimationEnd={() => {
+                    const header: HTMLElement = document.getElementById("header") as HTMLElement;
+                    header.className="";
+               }}
+          >
+               <img src={ headerWallpaper } id="background" />
+               <div id="title" >{"Calculus Basics"}</div>
+               <div id="topbar">
+                    <button 
+                         id="menuButton"
+                         type="button"
+                         onClick={ showSidebar }
+                    >
+                         <img src={ menuIcon } id="menuIcon"/>
+                    </button>
                </div>
-               <Sidebar/>
-               <div style={{position: "absolute", top: "40vh", left: "0%"}}>
-                    <Outlet />
-               </div>
-          </>
+          </div>
+          <Sidebar/>
+          <div style={{position: "absolute", top: "max(28vw, 30vh)", left: "0%"}}>
+               <Outlet />
+          </div>
+         </>
      )
 }
 
