@@ -63,7 +63,7 @@ html, body {
      -webkit-text-stroke: 0.05vw white;
 }
 
-#header #topbar {
+#topbar {
      position: absolute;
      left: 0;
      top: 0;
@@ -71,7 +71,7 @@ html, body {
      height: 30%;
 }
 
-#header #topbar #menuButton {
+#topbar #menuButton {
      position: absolute;
      left: 2.5%;
      top: 12%;

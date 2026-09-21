@@ -2,7 +2,7 @@
      border: 0.25vw solid lightgrey;
 }
 
-#differentiation {
+.content {
      display:block;
      align-items: center;
      width: 100vw;
@@ -12,46 +12,50 @@
 }
 
 
-#differentiation .title {
+.title {
      font-family: 'Trirong', serif;
      font-size: 2vw;
 }
 
-#differentiation .caption {
+.caption {
      font-family: 'Trirong', serif;
      font-size: min(1vw, 3vh);
      margin: 0%;
      margin-bottom: 1.5%;
 }
 
-#differentiation .p0 {
+.p0 {
      font-family: 'Trirong', serif;
      font-size: 1.4vw;
      margin: 0%;
      margin-bottom: 1.5%;
 }
 
-#differentiation .p1 {
+.p1 {
      font-family: 'Trirong', serif;
      font-size: 1.5vw;
      margin: 0%;
      margin-bottom: 1.5%;
 }
 
-#differentiation .p2 {
+.p2 {
      font-family: 'Trirong', serif;
      font-size: 1.7vw;
      margin: 0%;
      margin-bottom: 1.5%;
 }
 
-#differentiation .p3 {
+.p3 {
      font-family: 'Trirong', serif;
      font-size: 1.85vw;
      margin: 0%;
      margin-bottom: 1.5%;
 }
 
-#differentiation .section {
-     margin-bottom: 4%;
+.section {
+     margin-bottom: 3%;
+}
+
+.section2 {
+     margin-bottom: 2%;
 }

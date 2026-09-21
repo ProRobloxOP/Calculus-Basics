@@ -11,8 +11,8 @@ interface ArrowExpanderProps {
      activeType: activeTypes,
      inactiveType: activeTypes,
 
-     activeCallback: () => void,
-     inactiveCallback? : () => void,
+     activeListener: () => void,
+     inactiveListener? : () => void,
 }
 
 const arrowUnicodes = {
@@ -32,12 +32,12 @@ class ArrowExpanderClass {
      private active: boolean;
      private setActive: Dispatch<SetStateAction<boolean>>;
 
-     constructor({activeType, inactiveType, activeCallback, inactiveCallback}: ArrowExpanderProps) {
+     constructor({activeType, inactiveType, activeListener, inactiveListener}: ArrowExpanderProps) {
           this.activeStr = arrowUnicodes[activeType];
           this.inactiveStr = arrowUnicodes[inactiveType];
           
-          this.activated = activeCallback;
-          this.inActivated = inactiveCallback;
+          this.activated = activeListener;
+          this.inActivated = inactiveListener;
 
           [this.active, this.setActive] = useState(false);
      }
@@ -65,12 +65,12 @@ class ArrowExpanderClass {
      }
 }
 
-export function ArrowExpander({activeType, inactiveType, activeCallback, inactiveCallback}: ArrowExpanderProps) : JSX.Element {
+export function ArrowExpander({activeType, inactiveType, activeListener, inactiveListener}: ArrowExpanderProps) : JSX.Element {
      const arrow: ArrowExpanderClass = new ArrowExpanderClass({
           ["activeType"]: activeType,
           ["inactiveType"]: inactiveType,
-          ["activeCallback"]: activeCallback,
-          ["inactiveCallback"]: inactiveCallback,
+          ["activeListener"]: activeListener,
+          ["inactiveListener"]: inactiveListener,
      });
 
      const [arrowState, setState] = useState(arrowUnicodes[inactiveType]);

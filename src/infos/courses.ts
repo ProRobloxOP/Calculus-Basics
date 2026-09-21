@@ -17,6 +17,14 @@ const courses : calculusLevel[] = [
           ["number"] : 1,
           ["topics"] : [
                {
+                    ["name"] : "Limits",
+                    ["subtopics"] : [
+                         {["name"] : "Definitions"},
+                         {["name"] : "Solutions of A Limit"},
+                         {["name"] : "Composite Functions"},
+                    ],
+               },
+               {
                     ["name"] : "Differentiation",
                     ["subtopics"] : [
                          {["name"] : "Definitions"},

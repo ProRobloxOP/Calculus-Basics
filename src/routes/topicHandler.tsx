@@ -12,8 +12,10 @@ import {
 } from "better-react-mathjax"
 
 import Differentiation from "./topics/differentiation";
+import Limits from "./topics/limits";
 
 export const topicModules: Map<string, () => Map<string, () => JSX.Element>> = new Map<string, () => Map<string, () => JSX.Element>>([
+     ["limits", Limits],
      ["differentiation", Differentiation],
 ]);
 
